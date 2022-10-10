@@ -1,0 +1,14 @@
+<%= form_with model: @task do |form| %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+    <% if @task.errors.any? %>
+        <% @task.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+    <% end %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
